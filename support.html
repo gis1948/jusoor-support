@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jusoor Support - Help, account assistance, safety, and reporting.">
+  <title>Jusoor Support</title>
+  <style>
+    :root {
+      --green: #16834b;
+      --green-dark: #0f6338;
+      --green-light: #eaf7f0;
+      --text: #17231d;
+      --muted: #617068;
+      --bg: #f6f9f7;
+      --card: #ffffff;
+      --border: #dfe8e2;
+      --shadow: 0 8px 28px rgba(23, 35, 29, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f6338, #16834b);
+      color: white;
+      padding: 64px 20px 72px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.16);
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 58px);
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 12px auto 0;
+      font-size: 18px;
+      opacity: .94;
+    }
+
+    .container {
+      width: min(1040px, calc(100% - 32px));
+      margin: -34px auto 60px;
+      position: relative;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .contact-card h2 { margin-top: 0; }
+
+    .button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    h2 {
+      font-size: 27px;
+      margin-bottom: 16px;
+      letter-spacing: -.4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(23, 35, 29, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .steps {
+      counter-reset: item;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .steps li {
+      counter-increment: item;
+      position: relative;
+      padding: 17px 18px 17px 58px;
+      margin-bottom: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .steps li::before {
+      content: counter(item);
+      position: absolute;
+      left: 17px;
+      top: 15px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .notice {
+      padding: 20px 22px;
+      border-left: 4px solid var(--green);
+      background: var(--green-light);
+      border-radius: 10px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      padding: 28px 0 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav {
+      margin-top: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding: 48px 18px 62px; }
+      .grid { grid-template-columns: 1fr; }
+      .container { width: min(100% - 22px, 1040px); }
+      .contact-card, .card { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="logo" aria-hidden="true">J</div>
+    <h1>Jusoor Support</h1>
+    <p>
+      Welcome to Jusoor. We're here to help you use the app, manage your account,
+      report problems, and keep our community safe.
+    </p>
+    <nav aria-label="Support navigation">
+      <a href="#account">Account</a>
+      <a href="#app">App Help</a>
+      <a href="#safety">Safety</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="contact-card" id="contact">
+      <h2>Need help?</h2>
+      <p>
+        If you have a question, found a problem, or need assistance with your
+        account, please contact the Jusoor support team.
+      </p>
+      <!-- Replace the email address below with the official Jusoor support address before publishing. -->
+      <a class="button" href="mailto:support@jusoor.app">Contact Jusoor Support</a>
+    </div>
+
+    <section id="account">
+      <h2>Account help</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Sign-in problems</h3>
+          <p>
+            Make sure you are using the email address associated with your Jusoor
+            account. If you cannot access your account, contact support and
+            describe the problem without sending your password.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Profile information</h3>
+          <p>
+            You can manage available profile information from your account
+            settings. If information cannot be changed in the app, contact
+            support for assistance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Account or content removal</h3>
+          <p>
+            If you want help with account or content removal, contact support
+            with enough information for us to identify the request. Never send
+            your password or authentication codes.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Privacy questions</h3>
+          <p>
+            For questions about personal information, privacy, or data associated
+            with your account, please contact Jusoor support.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="app">
+      <h2>App help</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>App is not working correctly</h3>
+          <p>
+            First, make sure you have the latest version of Jusoor available from
+            the App Store or Google Play. You can also close and reopen the app
+            and check your internet connection.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Community features</h3>
+          <p>
+            Jusoor includes community features such as discussions, local
+            information, businesses, events, and other community content.
+            Availability may vary by feature and location.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Incorrect information</h3>
+          <p>
+            If you find inaccurate, outdated, duplicated, or inappropriate
+            information, please report it through the available reporting tools
+            or contact support.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Technical reports</h3>
+          <p>
+            When contacting support about a technical problem, include the
+            feature affected, what you expected to happen, what happened instead,
+            and the app version if available.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="safety">
+      <h2>Safety and reporting</h2>
+      <div class="notice">
+        Jusoor is committed to maintaining a respectful and safe community.
+        Please report content or behavior that violates applicable community
+        rules or appears abusive, fraudulent, threatening, or otherwise
+        inappropriate.
+      </div>
+
+      <ol class="steps" style="margin-top:18px;">
+        <li>Use the in-app reporting option when one is available.</li>
+        <li>Provide a clear description of the issue and the relevant content.</li>
+        <li>Do not include passwords, authentication codes, payment-card numbers, or other unnecessary sensitive information.</li>
+        <li>For urgent personal safety concerns, contact the appropriate local emergency or law-enforcement service.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Before contacting support</h2>
+      <div class="card">
+        <p>
+          Please tell us what happened, which Jusoor feature you were using,
+          whether the problem happens repeatedly, and the device/platform you
+          are using. Screenshots can be helpful when they do not contain
+          sensitive information.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Where can I get Jusoor?</h3>
+          <p>
+            Jusoor is distributed through its supported official app stores.
+            Always install the app from an official store or trusted Jusoor
+            distribution channel.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Can I report another user?</h3>
+          <p>
+            Yes. Use the available in-app reporting tools when provided. If the
+            appropriate reporting option is unavailable, contact Jusoor support.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>How do I report inappropriate content?</h3>
+          <p>
+            Use the reporting control associated with the content whenever
+            possible. Include a short explanation so the moderation team can
+            understand the issue.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>How do I contact Jusoor?</h3>
+          <p>
+            Use the Contact Jusoor Support button on this page. Please do not
+            send passwords or verification codes in support requests.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2026 Jusoor. All rights reserved.</div>
+      <div style="margin-top:8px;">
+        Support information for the Jusoor mobile application.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
